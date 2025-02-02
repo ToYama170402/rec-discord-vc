@@ -25,7 +25,11 @@ async def on_voice_state_update(member, before, after):
     ):
         channel = after.channel
         vc = await channel.connect()
-        vc.start_recording(discord.sinks.WaveSink(), finished_callback)
+        while True:
+            try:
+                vc.start_recording(discord.sinks.WaveSink(), finished_callback)
+            except Exception as e:
+                print(e)
     if (
         member.id == int(os.environ.get("TARGET_USER_ID") or 0)
         and before.channel is not None
