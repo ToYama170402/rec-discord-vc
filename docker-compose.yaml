@@ -13,4 +13,4 @@ services:
     environment:
       - TZ=Asia/Tokyo
     volumes:
-      - ./recordings:/app/recordings
+      - ./recordings:/workspaces/recordings

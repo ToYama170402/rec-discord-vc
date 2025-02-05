@@ -4,7 +4,7 @@ FROM python:3.9-slim
 RUN apt-get update && apt-get install -y ffmpeg
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /workspace
 
 # Copy the current directory contents into the container at /app
 COPY . /app
