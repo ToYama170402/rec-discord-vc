@@ -17,7 +17,9 @@ async def on_ready():
 
 
 @client.event
-async def on_voice_state_update(member, before, after):
+async def on_voice_state_update(
+    member: discord.Member, before: discord.VoiceState, after: discord.VoiceState
+):
     if (
         member.id == int(os.environ.get("TARGET_USER_ID") or 0)
         and after.channel is not None
@@ -39,7 +41,7 @@ async def on_voice_state_update(member, before, after):
             await vc.disconnect(force=True)
 
 
-async def finished_callback(sink, *args):
+async def finished_callback(sink: discord.sinks.Sink, *args: discord.VoiceState):
     recording_dir = pathlib.Path("./recordings")
     recording_dir.mkdir(exist_ok=True)
     files = [
