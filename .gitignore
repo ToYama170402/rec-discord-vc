@@ -1,3 +1,5 @@
 .env
 recordings/*
 .venv
+db.json
+__pycache__
