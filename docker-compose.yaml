@@ -10,4 +10,4 @@ services:
       - TZ=Asia/Tokyo
       - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}
     volumes:
-      - ./recordings:/workspaces/recordings
+      - ./recordings:/workspace/recordings
